@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom */
+.headerSpace {
+  margin-top: 95px;
+}
+
+/* Style that first letter! */
+.first-letter {
+  font-size: 35px;
+  line-height: 70px;
+}
+
+/* Style that first letter! */
+.subhead {
+  initial-letter: 2;
+}
+
+/* Style that first letter! */
+.subhead::first-letter {
+  initial-letter: 2;
+}
+
+/* paragraph */
+p {
+  text-align: left;
+}
+
+/* footer */
+.footer {
+  bottom: 0;
+  background-color: rgba(46, 140, 9, 0.542);
+  width: 100%;
+  text-align: center;
+}
