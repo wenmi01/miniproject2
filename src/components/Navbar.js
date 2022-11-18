@@ -25,6 +25,7 @@ function Navbar(props) {
     let aboutClass = pathname === '/about' ? 'active' : '';
     let contactClass = pathname === '/contact' ? 'active' : '';
     let loginClass = pathname === '/login' ? 'active' : '';
+    let appClass = pathname === '/app' ? 'active' : '';
 
 
   return (
@@ -65,6 +66,11 @@ function Navbar(props) {
               <li className={"nav-item " + loginClass}>
                 <a className="nav-link" href={baseUrl + "/login"}>
                   Login
+                </a>
+              </li>
+              <li className={"nav-item " + appClass}>
+                <a className="nav-link" href={baseUrl + "/app"}>
+                  App
                 </a>
               </li>
             </ul>

@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Helmet } from 'react-helmet';
 
+import '../App.css';
+
 function Footer() {
     return(
         <div>

@@ -21,7 +21,7 @@ function Contact() {
 
       <br />
       <p className="h4 text-center">
-          Ready to begin using BiXfer? <br/>
+          Ready to begin using BiXfer? <br/><br/>
           <a className="btn btn-lg btn-success text-white" href={baseUrl + "/login"}> LET'S GET STARTED NOW</a>
       </p>
 

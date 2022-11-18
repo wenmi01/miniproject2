@@ -51,6 +51,7 @@ class ContactForm extends React.Component {
               <label htmlFor="message">Message</label>
               <textarea className="form-control" required rows="5" id="message" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
           </div>
+          <br/>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>

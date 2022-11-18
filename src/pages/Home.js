@@ -40,6 +40,7 @@ function Home() {
         <br/>
 
         <h2>You are losing a valuable resource due to:</h2>
+        <br/>
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">
             <Accordion.Header><div className="h3">Inevitable Resignations</div></Accordion.Header>
@@ -68,14 +69,14 @@ function Home() {
         
         <br />
         <div className="h4">
-          Ready to begin using BiXfer? <br />
+          Ready to begin using BiXfer? <br /><br />
           <a className="btn btn-lg btn-success text-white" href={baseUrl + "/login"}> LET'S GET STARTED NOW</a>
         </div>
 
         <br />
         <div>
           <div className="h2">What are you waiting for?</div>
-
+          <br/>
           <div className="h3"><a className="btn btn-lg btn-success text-white" href={baseUrl + "/contact"}>CONTACT BiXfer NOW for Inquiries!</a></div>
         </div>
         <Footer className="headerSpace" />

@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 
 import Login from './app/pages/Login';
 
+import AppUI from './app/pages/AppUI';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -20,6 +22,7 @@ function App() {
         <Route path="about" element={ <About/> } />
         <Route path="contact" element={ <Contact/> } />
         <Route path="login" element={ <Login/> } />
+        <Route path="app" element={ <AppUI/> } />
       </Routes>
     </div>
   );
