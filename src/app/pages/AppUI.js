@@ -82,17 +82,22 @@ function AppUI() {
   };
 
   const onClickDelete = (event, item) => {
-    fetch(apiPath + "/docs/" + item.id, {
-      method: "DELETE",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        getDocsList();
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    const result = window.confirm('Are you really sure?');
+    if (result === true){
+        fetch(apiPath + "/docs/" + item.id, {
+        method: "DELETE",
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            getDocsList();
+        })
+        .catch((err) => {
+            console.log(err.message);
+        });
+    };
   };
+
+  // Confirm Delete
 
   return (
     <div>
@@ -132,62 +137,64 @@ function AppUI() {
         </div>
 
         <button
-          className="btn btn-primary m-2"
+          className="btn btn-success m-2"
           onClick={(event) => addHandler(event)}
         >
-          Add New Record
+          Add
         </button>
 
-        <form onSubmit={onHandleSubmit}>
-          <input type="hidden" value="{formFields.id}" />
-          <input
-            type="text"
-            name="first_name"
-            value={formFields.first_name}
-            placeholder="First Name"
-            onChange={handleChange}
-            className="m-1"
-          />
-          <input
-            type="text"
-            name="last_name"
-            value={formFields.last_name}
-            placeholder="Last Name"
-            onChange={handleChange}
-            className="m-1"
-          />
-          <input
-            type="text"
-            name="receiver_first_name"
-            value={formFields.receiver_first_name}
-            placeholder="Receiver's First Name"
-            onChange={handleChange}
-            className="m-1"
-          />
-          <input
-            type="text"
-            name="receiver_last_name"
-            value={formFields.receiver_last_name}
-            placeholder="Receiver's Last Name"
-            onChange={handleChange}
-            className="m-1"
-          />
-          <br />
-          <textarea
-            name="transition_text"
-            value={formFields.transition_text}
-            placeholder="Transition Text change with WYSIWYG"
-            rows="4"
-            cols="100"
-            maxLength="200"
-            onChange={handleChange}
-            className="m-3"
-          ></textarea>
+        <div class="border border-2 border-success rounded m-2 p-2">
+          <form onSubmit={onHandleSubmit}>
+            <input type="hidden" value="{formFields.id}" />
+            <input
+              type="text"
+              name="first_name"
+              value={formFields.first_name}
+              placeholder="First Name"
+              onChange={handleChange}
+              className="m-1"
+            />
+            <input
+              type="text"
+              name="last_name"
+              value={formFields.last_name}
+              placeholder="Last Name"
+              onChange={handleChange}
+              className="m-1"
+            />
+            <input
+              type="text"
+              name="receiver_first_name"
+              value={formFields.receiver_first_name}
+              placeholder="Receiver's First Name"
+              onChange={handleChange}
+              className="m-1"
+            />
+            <input
+              type="text"
+              name="receiver_last_name"
+              value={formFields.receiver_last_name}
+              placeholder="Receiver's Last Name"
+              onChange={handleChange}
+              className="m-1"
+            />
+            <br />
+            <textarea
+              name="transition_text"
+              value={formFields.transition_text}
+              placeholder="Transition Text change with WYSIWYG"
+              rows="4"
+              cols="100"
+              maxLength="200"
+              onChange={handleChange}
+              className="m-3"
+            ></textarea>
 
-          <div>
-            <input type="Submit" />
-          </div>
-        </form>
+            <div>
+              <input type="Submit" className="btn btn-success" />
+            </div>
+          </form>
+        </div>
 
         {docs.map((item) => {
           return (
@@ -215,16 +222,25 @@ function AppUI() {
                   <div className="card-footer">
                     Actions:{" "}
                     <button
-                      className="btn btn-primary"
+                      className="btn btn-success mx-1"
                       onClick={(event) => onClickUpdate(event, item)}
                     >
                       Update
                     </button>
                     <button
+                      id="btn-delete"
                       className="btn btn-danger"
                       onClick={(event) => onClickDelete(event, item)}
                     >
                       Delete
+                    </button>
+                    <button
+                      class="btn btn-default"
+                      data-href={apiPath + '/delete/' + item.id}
+                      data-toggle="modal"
+                      data-target="#confirm-delete"
+                    >
+                      Delete record #54
                     </button>
                   </div>
                 </div>
