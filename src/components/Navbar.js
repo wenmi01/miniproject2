@@ -7,6 +7,8 @@ import logo from '../assets/images/bixfer_logo_w.png';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+
 import ApiService from "../services/ApiService";
 const baseUrl = ApiService("baseUrl");
 
