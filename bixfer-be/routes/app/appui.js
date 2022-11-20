@@ -65,28 +65,11 @@ router.get("/:id", (req, res, next) => {
   res.status(200).send(doc ? doc : { status: "Record not found!" });
 });
 
-// router.get("/name/:keyword", (req, res) => {
+// router.get("/search/:keyword", (req, res) => {
 //     const { keyword } = req.params;
 //     const result = docs.filter(item=>item.name.toLowerCase().includes(keyword));
 //     res.status(200).send( result.length > 0 ? result : keyword + " not found!");
 // });
-
-// router.get("/age/:age", (req, res) => {
-//     const { age } = req.params;
-//     const result = docs.filter(item=>item.age === Number(age));
-//     if (result.length > 0) {
-//       res.status(200).send(result);
-//     } else {
-//       res.status(200).send("Age "+ age + " not found!");
-//     }
-//   });
-
-//   router.get("/gender/:gender", (req, res) => {
-//     const { gender } = req.params;
-//     const result = docs.filter(item=>item.gender === gender);
-
-//     res.status(200).send( result.length > 0 ? result : gender + " not found!");
-//   });
 
 router.post("/docs", (req, res) => {
   let data = {

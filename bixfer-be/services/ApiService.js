@@ -1,5 +1,3 @@
-// import React from 'react';
-
 let param = "";
 let ret_val="";
 
@@ -19,7 +17,5 @@ function ApiService(param='apiPath'){
     return ret_val; 
 
 }
-    // const apiPath = () => {
-    //     return 'http://localhost:9000';  
-    // };
+
 export default ApiService;

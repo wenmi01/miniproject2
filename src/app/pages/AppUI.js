@@ -10,16 +10,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ApiService from "../../services/ApiService";
 const apiPath = ApiService("apiPath");
 
-// let first_name = "Jan";
-// let last_name = "Tapos";
-// let receiver_first_name = "Avril";
-// let receiver_last_name = "Delayna";
-
-let first_name = "";
-let last_name = "";
-let receiver_first_name = "";
-let receiver_last_name = "";
-
 function AppUI() {
   const [docs, setDocs] = useState([]);
   const [formFields, setFormFields] = useState([]);
@@ -107,16 +97,22 @@ function AppUI() {
   return (
     <div>
       <Header />
-      <div className="container-fluid headerSpace">
+      <div className="container headerSpace">
         <div className="row">
           <div className="col-md-12">
-            <h3>Transitions</h3>
-            <p>Hello,</p>
+            <div className="card">
+              <div className="card-header">
+                <h4>Transitions</h4>
+              </div>
+              <div className="card-text">
+                <p>Hello,</p>
 
-            <div>Please see your transitions below.</div>
+                <p>Please see your transitions below.</p>
 
-            <div>Regards,</div>
-            <div>BiXfer Team</div>
+                <p>Regards,</p>
+                <p>BiXfer Team</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="row">
@@ -197,19 +193,19 @@ function AppUI() {
           return (
             <div className="row">
               <div className="col-md-12">
-                <div className="card">
+                <div className="card m-2">
                   <h5 className="card-header">Transition ID: {item.id}</h5>
                   <div className="card-body">
                     <p className="card-text">
                       <b>Source:</b>{" "}
                       <em>
-                        {item.first_name}{" "}{item.last_name}
+                        {item.first_name} {item.last_name}
                       </em>
                     </p>
                     <p classname="card-text">
                       <b>Receiver</b>{" "}
                       <em>
-                        {item.receiver_first_name}{" "}{item.receiver_last_name}
+                        {item.receiver_first_name} {item.receiver_last_name}
                       </em>
                     </p>
                     <p className="card-text">
@@ -236,8 +232,6 @@ function AppUI() {
             </div>
           );
         })}
-
-
       </div>
       <Footer />
     </div>

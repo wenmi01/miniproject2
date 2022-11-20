@@ -4,6 +4,9 @@ import { Helmet } from 'react-helmet';
 
 import '../App.css';
 
+import ApiService from "../services/ApiService";
+const baseUrl = ApiService("baseUrl");
+
 function Footer() {
     return(
         <div>
@@ -24,7 +27,8 @@ function Footer() {
                     
                           <div className="text-center text-white p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
                             © 2022 Copyright: &nbsp;
-                            <a className="text-white" href="#">BiXfer: Rowen Remis R. Iral & Normita Burce</a>
+                            <a className="text-white" href={baseUrl + "/#"}>BiXfer App by 
+                            <br />Rowen Remis R. Iral & Normita Burce</a>
                           </div>
 
                         </footer>
